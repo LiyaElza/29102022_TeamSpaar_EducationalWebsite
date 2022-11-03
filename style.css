@@ -84,6 +84,8 @@
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 /* Position the "next button" to the right */
@@ -120,6 +122,7 @@
   width: 15px;
   margin: 0 8px;
   background-color: #bbb;
+  border-top: 20px;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
