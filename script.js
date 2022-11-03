@@ -10,7 +10,7 @@ function showSlides() {
   if (slideIndex < 0) {slideIndex = 2}
   slides[slideIndex].style.display = "block";
   slideIndex++;
-  setInterval(showSlides, 30000); 
+  setInterval(showSlides, 10000); 
 }
 
 const prev=document.getElementById('prev');
