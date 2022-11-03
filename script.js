@@ -1,47 +1,36 @@
-const sample=document.getElementById('samplex');
-sample.addEventListener('click',() =>{
-  console.log("clicked");
-})
-
-// function sample()
-// {
-//   console.log("Hello");
-// }
-
-// var next=document.getElementsByClassName('.next');
-
-//   next.add('click', () =>{
-//     console.log(n);
-//     showSlides(slideIndex += n);
-//    });
-
-
+const slides = document.querySelectorAll('.mySlides');
 let slideIndex = 0;
 showSlides();
 
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-
 function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  slides.forEach(slide => {
+    slide.style.display = "none";
+  });
+  if (slideIndex > (slides.length-1)) {slideIndex = 0}
+  if (slideIndex < 0) {slideIndex = 2}
+  slides[slideIndex].style.display = "block";
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 8000); // Change image every 7 seconds
+  setInterval(showSlides, 30000); 
 }
 
+const prev=document.getElementById('prev');
 
-// // Next/previous controls
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+const next=document.getElementById('next');
 
+prev.addEventListener('click', () =>{
+  slideIndex =slideIndex-2;
+  showSlides();
 
+})
+
+next.addEventListener('click', () =>{
+  showSlides();
+})
+
+const dots = document.querySelectorAll('.dot');
+dots.forEach(dot =>{
+  dot.addEventListener('click',() =>{
+    let n=dot.getAttribute("value");
+    showSlides(slideIndex = n);
+  })
+})
