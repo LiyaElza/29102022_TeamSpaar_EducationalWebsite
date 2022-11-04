@@ -96,3 +96,34 @@ submitbtn.addEventListener('click',()=>
     }
 
 })
+
+//kripa
+const buttons=document.querySelectorAll('.contactbutton');
+const forms=document.querySelectorAll('.contactform');
+
+buttons.forEach(button =>{
+  button.addEventListener('click',()=>{
+  forms.forEach(form =>{
+    if(button.getAttribute('value')==form.getAttribute('value'))
+    {
+      form.style.setProperty('display','block');
+    }
+  })
+})
+})
+
+function myFunction() {
+  let x = document.getElementById("name").value;
+  document.getElementById("demo").innerText = "Dear " +x+ " ,Your Ticket for communication is ready🤩";
+}
+
+const galleryimages=document.querySelectorAll('.galleryimage');
+const imagezoom=document.getElementById('gallerycontainer');
+const expandedimg=document.getElementById('expandedImg');
+galleryimages.forEach(img =>{
+  img.addEventListener('click',()=>{
+    let imagelink=img.getAttribute("src");
+    expandedimg.setAttribute("src",imagelink);
+    imagezoom.style.display="block";
+  })
+})
