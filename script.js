@@ -50,3 +50,49 @@ dots.forEach(dot =>{
     showSlides(slideIndex = n);
   })
 })
+
+//akshay code
+const lang=document.getElementById('lang');
+const field=document.getElementById('field');
+const text =document.getElementById('text');
+const reccomendlink=document.getElementById('var');
+const submitbtn=document.getElementById('btn');
+
+submitbtn.addEventListener('click',()=>
+{
+    if(lang.value=='java' && field.value=='dev')
+    {
+        text.innerHTML="BEST CHOICE:- Experion Technologies";
+        reccomendlink.href="https://www.experionglobal.com/";
+    }
+    else if(lang.value=='java' && field.value=='test')
+    {
+        text.innerHTML="BEST CHOICE:- Tata Consuctency Service";
+        reccomendlink.href="https://www.tcs.com/";
+    }
+    else if(lang.value=='java' && field.value=='bus')
+    {
+        text.innerHTML="BEST CHOICE:- I B M";
+        reccomendlink.href="https://www.ibm.com/in-en";
+    }
+    else if(lang.value=='python' && field.value=='dev')
+    {
+        text.innerHTML="BEST CHOICE:- Wipro";
+        reccomendlink.href="https://www.wipro.com/";
+    }
+    else if(lang.value=='python'&& field.value=='test')
+    {
+        text.innerHTML="BEST CHOICE:- Google";
+        reccomendlink.href="https://www.google.com/";
+    }
+    else if(lang.value=='python' && field.value=='bus')
+    {
+        text.innerHTML="BEST CHOICE:- Microsoft";
+        reccomendlink.href="https://www.microsoft.com/en-in/";
+    }
+    else
+    {
+      text.innerHTML=" ****Please select the field***";
+    }
+
+})
