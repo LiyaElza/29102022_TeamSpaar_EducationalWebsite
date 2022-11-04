@@ -12,9 +12,20 @@ card3.addEventListener('click',()=>{
   card3.classList.toggle("is-flipped");
 })
 // courses end
-
-
+ //liya
 const slides = document.querySelectorAll('.mySlides');
+const loginbtn=document.getElementById("loginbtn");
+const loginMessage=document.getElementById("loginMessage");
+const signinbtn=document.getElementById("signinbtn");
+const signinMessage=document.getElementById("signinMessage");
+const loginIds=[
+  {username : 'LiyaElsa',
+   password : 'liya@1264'},
+  {username : 'kripa',
+   password : 'kripa@2001'},
+   {username : 'liya',
+   password : 'liya@2000'},
+];
 let slideIndex = 0;
 showSlides();
 
@@ -26,7 +37,7 @@ function showSlides() {
   if (slideIndex < 0) {slideIndex = 2}
   slides[slideIndex].style.display = "block";
   slideIndex++;
-  setInterval(showSlides, 10000); 
+  setTimeout(showSlides, 30000); 
 }
 
 const prev=document.getElementById('prev');
@@ -49,6 +60,59 @@ dots.forEach(dot =>{
     let n=dot.getAttribute("value");
     showSlides(slideIndex = n);
   })
+})
+
+
+loginbtn.addEventListener('click',() =>{
+   let usernameCollected=document.getElementById('logName').value;
+   let passwordCollected=document.getElementById('logPassword').value;
+  //  let validitycheck=0;
+  // loginIds.forEach(loginId =>{
+  //   if(loginId.username == usernameCollected && loginId.password == passwordCollected)
+  //   {
+  //     validitycheck=1
+      
+  //   }
+  // })
+  // if(validitycheck==1)
+  // {
+  //   loginMessage.innerHTML="You are logged in successfully";
+  // }
+  // else
+  // {
+  //   loginMessage.innerHTML="Please enter a valid username and password";
+  // }
+  let selectedId=loginIds.find(loginId => loginId.username==usernameCollected);
+  if(selectedId==undefined)
+  {
+    loginMessage.innerHTML="You are not registered with the service";
+  }
+  else{
+    if(selectedId.password==passwordCollected)
+    {
+      loginMessage.innerHTML="You are logged in successfully";
+    }
+    else{
+      loginMessage.innerHTML="Please enter correct password";
+    }
+  }
+
+})
+
+signinbtn.addEventListener('click',() =>{
+  let usernameCollected=document.getElementById('signName').value;
+  let passwordCollected=document.getElementById('signPassword').value;
+  if(passwordCollected.length < 8)
+  {
+    signinMessage.innerHTML="Use a password with more than 8 characters";
+  }
+  else
+  {
+    let object={username:usernameCollected,password:passwordCollected};
+    loginIds.push(object);
+    signinMessage.innerHTML="Successfully signed up for the service";
+  }
+
 })
 
 //akshay code
