@@ -1,3 +1,19 @@
+// courses
+const cards = document.querySelector(".cardii");
+cards.addEventListener('click', ()=>{
+  cards.classList.toggle("is-flipped");
+})
+const card2=document.querySelector(".cardi2");
+card2.addEventListener('click',()=>{
+  card2.classList.toggle("is-flipped");
+})
+const card3=document.querySelector(".cardi3");
+card3.addEventListener('click',()=>{
+  card3.classList.toggle("is-flipped");
+})
+// courses end
+
+
 const slides = document.querySelectorAll('.mySlides');
 let slideIndex = 0;
 showSlides();
@@ -34,7 +50,8 @@ dots.forEach(dot =>{
     showSlides(slideIndex = n);
   })
 })
-//----------------------------------------------------
+
+//akshay code
 const lang=document.getElementById('lang');
 const field=document.getElementById('field');
 const text =document.getElementById('text');
@@ -79,5 +96,3 @@ submitbtn.addEventListener('click',()=>
     }
 
 })
-
-
