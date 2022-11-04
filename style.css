@@ -212,21 +212,21 @@ html {
 }
 
 
-.container {
+.team_container {
   padding: 0 16px;
 }
 
-.container::after, .row::after {
+.team_container::after, .row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.title {
+.team_title {
   color: grey;
 }
 
-.button {
+.contactbutton {
   border: none;
   outline: 0;
   display: inline-block;
@@ -238,9 +238,97 @@ html {
   width: 100%;
 }
 
-.button:hover {
-  background-color: #555;
+.contactbutton:hover {
+  background-color:#5c5f5c;
 }
+.contactform{
+  display: none;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid rgb(22, 21, 20);
+  border-radius: 15px;
+  box-sizing: border-box;
+  
+}
+
+input[type=submit] {
+
+  width: 100%;
+  background-color: #070807;
+  color: rgb(241, 235, 235);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 20px;
+  /* cursor: pointer; */
+}
+
+input[type=submit]:hover {
+  background-color: #444844;
+}
+
+#demo{
+  height: 100px;
+}
+
+.gallerycolumn {
+  float: left;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.gallerycolumn img {
+  opacity: 0.7;
+  /* cursor: pointer; */
+  width: 350px;
+  height : 350px;
+}
+
+.gallerycolumn img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.galleryrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+#gallerycontainer {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+#expandedImg{
+  width:100%;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 650px) {
   .column {
@@ -248,7 +336,6 @@ html {
     display: block;
   }
 }
-
 /*Courses Section*/
 
 * {
@@ -611,6 +698,7 @@ background-color: white;
 display: grid;
 grid-template-columns: 55fr 45fr;
 align-items: center;
+margin-top: 700px;
 }
 
 .testimonials-container {
